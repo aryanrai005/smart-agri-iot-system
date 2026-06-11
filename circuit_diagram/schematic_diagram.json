@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "author": "IoT Student Engineer",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkitc-v4", "id": "esp32", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht", "top": -100, "left": -150, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "soil_pot", "top": 120, "left": -150, "attrs": { "label": "Soil Moisture" } },
+    { "type": "wokwi-potentiometer", "id": "water_pot", "top": 120, "left": 150, "attrs": { "label": "Water Level" } },
+    { "type": "wokwi-relay-module", "id": "relay", "top": -100, "left": 150, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp32:GND.1", "dht:GND", "black", [ "v0" ] ],
+    [ "esp32:3V3", "dht:VCC", "red", [ "v0" ] ],
+    [ "esp32:15", "dht:SDA", "blue", [ "v0" ] ],
+    [ "esp32:34", "soil_pot:SIG", "green", [ "v0" ] ],
+    [ "esp32:32", "water_pot:SIG", "yellow", [ "v0" ] ],
+    [ "esp32:2", "relay:IN", "orange", [ "v0" ] ]
+  ]
+}
